@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+</head>
+<body>
+	<h1>인덱스 페이지입니다.</h1>
+	<ul>
+		<!-- 상대경로 -->
+		<li><a href="hello">hello 요청</a></li>
+		<!-- 절대경로 /xxx/=> context path 최상위경로 -->
+		<li><a href="/Step01_Servlet/hello">hello 요청</a></li>
+		<li><a href="hello.html">hello.html요청</a></li>
+		<li><a href="study.html">study</a></li>
+		<li><a href="/Step01_Servlet/study.html">study</a></li>
+		<li><a href="sub/fortune.html">오늘의 운세보기</a></li>
+		<li><a href="/Step01_Servlet/sub/fortune.html">오늘의 운세보기2</a></li>
+		<!-- 상대경로 -->
+		<li><a href="sub/fortune">오늘의 운세보기3</a></li>
+		<!-- 절대경로 -->
+		<li><a href="/Step01_Servlet/sub/fortune">오늘의 운세보기4</a></li>
+		<li><a href="sub/fortune.jsp">오늘의 운세보기5</a></li>
+		<li><a href="test.html">테스트페이지</a></li>
+		<li><a href="/Step01_Servlet/send?msg=hello">GET방식 전송 테스트</a></li>
+		<li><a href="/Step01_Servlet/send.jsp?msg=bye">GET방식 전송 테스트</a></li>
+		<li><a href="/Step01_Servlet/shop/buy.jsp?num=999&type=A">999번 물품 구입하기</a></li>
+	</ul>
+	<h1>폼 테스트</h1>
+	<!-- 
+		 - form 사용법
+		 1. action속성의 값은 폼을 제출했을때 요청되는 경로가 된다.
+		 2. method속성의 값은 전송방식을 지정한다. 생략하면 default값인 get이다.
+		 3. form의 자손요소중에 type="submit" 버튼을 누르면 폼이 제출된다.
+		 4. 전송방식은 get방식과 post방식이 있는데
+		 	get방식 전송은 입력한 정보를 주소창에 달고가는 방식
+		 	post방식 전송은 요청의 몸통에 달고가는 방식이기때문에 주소창에 보이지 않는다.
+	 -->
+	<form action="/Step01_Servlet/send" method="get">
+		<label for="msg">메세지</label>
+		<input type="text" id="msg" name="msg"/>
+		<button type="submit">전송</button>
+	</form>
+	<br/>
+	<form action="/Step01_Servlet/send.jsp" method="get">
+		<label for="msg">메세지</label>
+		<input type="text" id="msg" name="msg"/>
+		<button type="submit">전송</button>
+	</form>
+	<br/>
+	<form action="/Step01_Servlet/test/send2" method="post">
+		<label for="msg">메세지</label>
+		<input type="text" id="msg" name="msg"/>
+		<button type="submit">전송</button>
+	</form>
+	<br/>
+	<form action="/Step01_Servlet/test/send2.jsp" method="post">
+		<label for="msg">메세지</label>
+		<input type="text" id="msg" name="msg"/>
+		<button type="submit">전송</button>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
